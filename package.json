@@ -17,6 +17,10 @@
   ],
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Realabiha/axios-wx-request"
+  },
   "devDependencies": {
     "babel-loader": "^9.1.2",
     "terser-webpack-plugin": "^5.3.6",
