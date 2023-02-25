@@ -1,6 +1,6 @@
 {
   "name": "axios-wx-request",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "基于微信小程序wx.request封装的请求库，支持拦截器、请求取消",
   "main": "index.js",
   "scripts": {
