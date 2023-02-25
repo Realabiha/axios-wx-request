@@ -8,7 +8,7 @@
 const Intercepter = function () { }
 Intercepter.prototype.use = function (onResolve, onReject) {
   if (this.handlers === undefined) this.handlers = []
-  this.handlers.unshift({ onResolve, onReject })
+  this.handlers.push(onResolve, onReject)
 }
 Intercepter.prototype.forEach = function (handler) {
   if (this.handlers === undefined) this.handlers = []
