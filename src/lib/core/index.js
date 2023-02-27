@@ -14,8 +14,8 @@ Axios.prototype.request = function (config) {
   let promise = Promise.resolve(config)
   queue.push(adapterChain)
   const { request, response } = this.intercepter
-  const requestChain = request.handlers || []
-  const responseChain = response.handlers || []
+  const requestChain = request.handlers
+  const responseChain = response.handlers
   queue.unshift(requestChain)
   queue.push(responseChain)
   while (queue.length) {

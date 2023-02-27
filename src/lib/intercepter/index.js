@@ -5,13 +5,13 @@
  * @param {Array} handlers 实例属性 用于保存回调函数
  * @return {*}
  */
-const Intercepter = function () { }
+const Intercepter = function () {
+  this.handlers = []
+}
 Intercepter.prototype.use = function (onResolve, onReject) {
-  if (this.handlers === undefined) this.handlers = []
   this.handlers.push(onResolve, onReject)
 }
 Intercepter.prototype.forEach = function (handler) {
-  if (this.handlers === undefined) this.handlers = []
   this.handlers.forEach(handler)
 }
 export default Intercepter
