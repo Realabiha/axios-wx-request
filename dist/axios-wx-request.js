@@ -124,13 +124,13 @@ const request = function (config) {
  * @param {Array} handlers 实例属性 用于保存回调函数
  * @return {*}
  */
-const Intercepter = function () { }
+const Intercepter = function () {
+  this.handlers = []
+}
 Intercepter.prototype.use = function (onResolve, onReject) {
-  if (this.handlers === undefined) this.handlers = []
   this.handlers.push(onResolve, onReject)
 }
 Intercepter.prototype.forEach = function (handler) {
-  if (this.handlers === undefined) this.handlers = []
   this.handlers.forEach(handler)
 }
 /* harmony default export */ const intercepter = (Intercepter);
@@ -174,8 +174,8 @@ Axios.prototype.request = function (config) {
   let promise = Promise.resolve(config)
   queue.push(adapterChain)
   const { request, response } = this.intercepter
-  const requestChain = request.handlers || []
-  const responseChain = response.handlers || []
+  const requestChain = request.handlers
+  const responseChain = response.handlers
   queue.unshift(requestChain)
   queue.push(responseChain)
   while (queue.length) {
